@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FireBaseCrudAngular"
+    }
+  },
+  "defaultProject": "FireBaseCrudAngular",
+  "cli": {
+    "analytics": false
+  }
 }
