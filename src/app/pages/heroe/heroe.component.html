@@ -1,0 +1,36 @@
+<h1>Heroe <small>Nombre del heroe</small></h1>
+<hr>
+<div class="row">
+    <div class="col text-right">
+        <button [routerLink]="['/heroes']" routerLinkActive="router-link-active"  class="btn btn-outline-primary">
+            <i class="fas fa-arrow-left"></i>
+           Atras
+        </button>
+    </div>
+</div>
+
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <form >
+
+            <div class="form-group">
+                <label >Firebase Id</label>
+
+                <input type="text"
+                class="form-control"
+                placeholder="FireBaseID"
+                disabled>
+                <small class="form-text text-muted">Este campo es autogenerado</small>
+            </div>
+            <div class="form-group">
+                <label >Nombre</label>
+
+                <input type="text"
+                class="form-control"
+                placeholder="Nombre"
+                >
+            </div>
+            
+        </form>
+    </div>
+</div>
