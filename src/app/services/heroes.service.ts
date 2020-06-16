@@ -31,7 +31,7 @@ export class HeroesService {
     return this.http.put(`${this.url}/heroes/${heroe.id}.json`,heretemp);
 
   }
-  getHeroe(){
+  getHeroes(){
       return this.http.get(`${this.url}/heroes.json`)
       .pipe(
           map(resp=>this.crearArreglo(resp))
@@ -50,6 +50,14 @@ export class HeroesService {
         heroes.push(heroe);
     });
     return heroes;
+  }
+
+  getheroe(id:string){
+      return this.http.get(`${this.url}/heroes/${id}.json`);
+  }
+
+  deleteheroe(id:string){
+      return this.http.delete(`${this.url}/heroes/${id}.json`);
   }
 
 } 

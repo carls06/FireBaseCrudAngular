@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<table class="table mt-3 animated fadeIn faster">
+<table *ngIf="!flag && heroes.length > 0" class="table mt-3 animated fadeIn faster">
     <thead class="thead-dark">
         <tr>
             <th>#</th>
@@ -30,7 +30,16 @@
                     <label *ngIf="item.vivo" class="badge badge-success">Vivo</label>
                     <label *ngIf="!item.vivo" class="badge badge-danger">Muerto</label>
                 </td>
-                <td></td>
+                <td>
+                    <button class="btn btn-info mr-1"
+                    [routerLink]="['/heroe/',item.id]"  >
+                        <i class="fa fa-pen"></i>
+                    </button>
+                    <button class="btn btn-danger "
+                    (click)="borrarHeroe(item,i)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
             </tr>
            
         </tbody>
@@ -38,7 +47,7 @@
 
 <!--loading-->
  
-<div  class="alert alert-info text-center mt-3">
+<div *ngIf="flag" class="alert alert-info text-center mt-3">
     <h4 class="alert-heading">Cargando</h4>
     <p>
         <i class="fa fa-sync-alt fa-spin fa-2x"></i>
@@ -46,7 +55,7 @@
     <p>Espere Por Favor</p>
 </div>
 
-<div  class="alert alert-warning text-center mt-3">
+<div *ngIf="!flag && heroes.length===0" class="alert alert-warning text-center mt-3">
     <h4 class="alert-heading">No hay registros</h4>
     <p>
         <i class="fa fa-exclamation fa-2x"></i>
